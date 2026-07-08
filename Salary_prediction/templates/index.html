@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AI Salary Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="background"></div>
+
+    <div class="container">
+
+        <div class="header">
+
+            <div class="badge">
+                AI Powered Salary Estimator
+            </div>
+
+            <h1>💰 AI Salary Predictor</h1>
+
+            <p>
+                Get an instant salary estimate based on your skills,
+                experience and industry.
+            </p>
+
+        </div>
+
+       <form action="/" method="POST">
+
+            <div class="grid">
+
+                <div class="field">
+                    <label>Job Title</label>
+                    <select name="job_title">
+                        <option>AI Engineer</option>
+                        <option>Data Analyst</option>
+                        <option>Frontend Developer</option>
+                        <option>Business Analyst</option>
+                        <option>Product Manager</option>
+                        <option>Backend Developer</option>
+                        <option>Machine Learning Engineer</option>
+                        <option>DevOps Engineer</option>
+                        <option>Software Engineer</option>
+                        <option>Cybersecurity Analyst</option>
+                        <option>Data Scientist</option>
+                        <option>Cloud Engineer</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Industry</label>
+                    <select name="industry">
+                        <option>Healthcare</option>
+                        <option>Telecom</option>
+                        <option>Media</option>
+                        <option>Retail</option>
+                        <option>Manufacturing</option>
+                        <option>Education</option>
+                        <option>Finance</option>
+                        <option>Technology</option>
+                        <option>Consulting</option>
+                        <option>Government</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Location</label>
+                    <select name="location">
+                        <option>India</option>
+                        <option>Australia</option>
+                        <option>Singapore</option>
+                        <option>Canada</option>
+                        <option>Sweden</option>
+                        <option>USA</option>
+                        <option>Netherlands</option>
+                        <option>Remote</option>
+                        <option>Germany</option>
+                        <option>UK</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Education Level</label>
+                    <select name="education_level">
+                        <option>High School</option>
+                        <option>Diploma</option>
+                        <option>Bachelor</option>
+                        <option>Master</option>
+                        <option>PhD</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Company Size</label>
+                    <select name="company_size">
+                        <option>Startup</option>
+                        <option>Small</option>
+                        <option>Medium</option>
+                        <option>Large</option>
+                        <option>Enterprise</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Experience Years</label>
+                    <input type="number" name="experience_years" min="0" max="50">
+                </div>
+
+                <div class="field">
+                    <label>Skills Count</label>
+                    <input type="number" name="skills_count" min="0" max="100">
+                </div>
+
+                <div class="field">
+                    <label>Certifications</label>
+                    <input type="number" name="certifications" min="0" max="50">
+                </div>
+
+            </div>
+
+            <button type="submit">
+                Predict Salary
+            </button>
+
+        </form>
+
+        {% if prediction %}
+        <div class="result">
+            <h2>Predicted Salary</h2>
+            <div class="salary">
+                {{ prediction }}
+            </div>
+        </div>
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>
